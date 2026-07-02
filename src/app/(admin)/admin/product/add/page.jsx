@@ -1,7 +1,8 @@
 'use client'
 import react, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getCategories, getBrands, getColors } from "@/api/api-call";
+import {  getBrands, getColors } from "@/api/api-call";
+import { getCategories} from "@/api/server-api";
 import Select from 'react-select'
 import { client, notify } from "@/utils/helper";
 import { Editor } from 'primereact/editor';
