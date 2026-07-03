@@ -1,11 +1,17 @@
 import Image from "next/image";
-import { getCategories } from "@/api/server-api";
+import { getCategories } from "@/api/api-call";
 import Link from "next/link";
 
 export default async function CategorySidebar() {
   const category_response = await getCategories({limit:5,Is_home:true,status:true});
+    if (!category_response?.success) {
+    return null;
+  }
   const baseUrl = category_response?.meta?.imageBaseUrl;
   const categories = category_response?.data || [];
+  if (!categories.length) {
+    return null;
+  }
  
 
   return (

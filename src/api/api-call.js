@@ -21,7 +21,39 @@ const getProducts = async(query ={})=>{
 
 }
 
+const getCategories = async (query = {}) => {
+  try {
+    const filter = new URLSearchParams();
 
+    if (query.id) filter.append("id", query.id);
+    if (query.status !== undefined) filter.append("status", query.status);
+    if (query.limit) filter.append("limit", query.limit);
+    if (query.Is_home) filter.append("Is_home", query.Is_home);
+    if (query.Is_popular) filter.append("Is_popular", query.Is_popular);
+
+    const url = `category${filter.toString() ? `?${filter.toString()}` : ""}`;
+
+    const response = await client.get(url);
+
+    return response.data?.success
+      ? response.data
+      : {
+          success: false,
+          data: [],
+        };
+
+  } catch (error) {
+    console.log(
+      "GET CATEGORY ERROR:",
+      error.response?.data || error.message
+    );
+
+    return {
+      success: false,
+      data: [],
+    };
+  }
+};
 
 const getBrands = async (query ={})=>{
   const filter = new URLSearchParams();
@@ -97,4 +129,4 @@ export const getDashboardData = async () => {
 
 
 
-export {getColors,getBrands,getProducts, findCategoryById,findProductById,getOrders,getSingleOrder,updateOrderStatus,getDashboardData}
+export {getColors,getCategories,getBrands,getProducts, findCategoryById,findProductById,getOrders,getSingleOrder,updateOrderStatus,getDashboardData}

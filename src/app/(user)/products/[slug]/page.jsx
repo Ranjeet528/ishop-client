@@ -8,7 +8,7 @@ import {
   getCategories
  
   
-} from "@/api/server-api";
+} from "@/api/api-call";
 
 import {
   getBrands,

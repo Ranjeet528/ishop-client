@@ -1,6 +1,6 @@
 
 
-import { getCategories } from '@/api/server-api';
+import { getCategories } from '@/api/api-call';
 import React from 'react'
 import { FaEdit} from "react-icons/fa";
 

@@ -33,8 +33,9 @@ useEffect(() => {
     e.preventDefault();
     setLoading(true);
 
-    client
-      .post("user/login", form)
+   client.post("user/login", form, {
+  withCredentials: true
+})
       .then(async (response) => {
         console.log(response.data.data.email, "email")
         notify(response.data.message, response.data.success);
@@ -44,11 +45,11 @@ useEffect(() => {
           //     email: "",
           //     password: ""
           // })
-          try {
-            const cartRes = await client.post("cart/sync", {
-              localCart: JSON.stringify(items)
-            })
-            const cartData = cartRes.data?.cart;
+         try {
+  const cartRes = await client.post("cart", {
+    localStorage: JSON.stringify(items)
+  })
+            const cartData = cartRes.data?.cart?.items || [];
             console.log(cartData)
             let final_total = 0;
             let original_total = 0;
@@ -95,7 +96,7 @@ useEffect(() => {
             localStorage.setItem("cart", JSON.stringify({
               final_total,
               original_total,
-              items
+              items:updatedItems
             }))
 
 
@@ -103,7 +104,8 @@ useEffect(() => {
             console.log(error)
           }
 
-            router.push("/")
+           router.refresh();
+           router.push("/");
         
         }
       })

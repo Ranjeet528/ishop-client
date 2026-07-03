@@ -1,4 +1,4 @@
-import { getCategories } from "@/api/server-api";
+import { getCategories } from "@/api/api-call";
 
 
 export default async function PopularCategories() {
