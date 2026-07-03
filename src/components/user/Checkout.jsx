@@ -9,7 +9,7 @@ import { client } from "@/utils/helper";
 import { useRazorpay} from "react-razorpay";
 
 
-export default function Checkout({ user }) {
+export default function   Checkout({ user }) {
   const { error, isLoading, Razorpay } = useRazorpay();
 
 
@@ -40,7 +40,7 @@ export default function Checkout({ user }) {
       );
 
       const orderData = {
-        address: selectedAddressObj,
+        shippingAddress: selectedAddressObj,
         paymentMethod,
         shipping,
         total,
