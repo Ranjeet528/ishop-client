@@ -1,26 +1,23 @@
 "use client";
 
+import { Suspense } from "react";
 import { CheckCircle, ShoppingBag, Home } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-export default function OrderSuccessPage() {
+function OrderSuccessContent() {
   const searchParams = useSearchParams();
-
   const orderId = searchParams.get("orderId");
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white shadow-md rounded-3xl p-8 md:p-12 text-center max-w-md w-full">
-
-        {/* Icon */}
         <div className="flex justify-center mb-5">
           <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
             <CheckCircle className="text-green-600 w-10 h-10" />
           </div>
         </div>
 
-        {/* Title */}
         <h1 className="text-2xl font-bold text-gray-900">
           Order Placed Successfully!
         </h1>
@@ -29,7 +26,6 @@ export default function OrderSuccessPage() {
           Thank you for your purchase 🎉
         </p>
 
-        {/* Order ID */}
         {orderId && (
           <div className="mt-4 text-sm text-gray-600">
             Order ID:
@@ -39,7 +35,6 @@ export default function OrderSuccessPage() {
           </div>
         )}
 
-        {/* Buttons */}
         <div className="mt-8 space-y-3">
           <Link
             href="/products"
@@ -57,8 +52,15 @@ export default function OrderSuccessPage() {
             Go to Home
           </Link>
         </div>
-
       </div>
     </div>
+  );
+}
+
+export default function OrderSuccessPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OrderSuccessContent />
+    </Suspense>
   );
 }

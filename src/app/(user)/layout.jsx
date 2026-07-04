@@ -4,6 +4,8 @@ import Header from "@/components/user/Header";
 import Footer from "@/components/user/Footer";
 import ReduxProvider from "@/redux/ReduxProvider";
 import { getMe } from "@/api/server-api.js";
+export const dynamic = "force-dynamic";
+
 
 
 
