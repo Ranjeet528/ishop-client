@@ -5,8 +5,8 @@ import FilterSidebar from "@/components/user/FilterSidebar";
 
 import ProductCard from "@/components/user/ProductCard";
 import ProductToolbar from "@/components/user/ProductToolbar";
-import { getBrands,  getColors, getProducts } from "@/api/api-call";
-import {getCategories} from "@/api/api-call";
+import { getBrands,  getColors, getProducts,getCategories } from "@/api/server-api";
+
 
 export default async function ProductsPage({searchParams}) { 
   const search_promise = await searchParams;

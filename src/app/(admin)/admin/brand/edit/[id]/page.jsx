@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { getBrands } from "@/api/api-call";
+import { getBrands } from "@/api/server-api";
 
 export default async function EditBrand({ params }) {
   const { id } = await params;

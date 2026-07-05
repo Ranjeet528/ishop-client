@@ -1,6 +1,6 @@
 "use client";
 
-import { getProducts } from "@/api/api-call";
+import { getProducts } from "@/api/server-api";
 import React, { useEffect, useState } from "react";
 import { FaEdit, FaImages } from "react-icons/fa";
 import Link from "next/link";

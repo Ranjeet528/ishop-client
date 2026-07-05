@@ -1,4 +1,4 @@
-import { getBrands } from "@/api/api-call";
+import { getBrands } from "@/api/server-api";
  
 
 export default async function FeaturedBrands() {

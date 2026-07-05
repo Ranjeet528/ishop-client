@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/user/Header";
 import Footer from "@/components/user/Footer";
 import ReduxProvider from "@/redux/ReduxProvider";
-import { getMe } from "@/api/server-api.js";
+import { getMe } from "@/api/auth-server";
 export const dynamic = "force-dynamic";
 
 

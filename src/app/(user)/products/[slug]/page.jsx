@@ -3,19 +3,14 @@ import PopularCategories from "@/components/user/PopularCategories";
 import FilterSidebar from "@/components/user/FilterSidebar";
 import ProductCard from "@/components/user/ProductCard";
 import ProductToolbar from "@/components/user/ProductToolbar";
-import {
-  
-  getCategories
- 
-  
-} from "@/api/api-call";
+
 
 import {
   getBrands,
-
+   getCategories,
   getColors,
   getProducts,
-} from "@/api/api-call";
+} from "@/api/server-api";
 
 export default async function ProductsPage({
   params, searchParams

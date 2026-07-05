@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { client, notify } from "@/utils/helper";
-import { getCategories } from "@/api/api-call";
+import { getCategories } from "@/api/server-api";
 import Select from 'react-select'
 
 export default function AddBrand() {

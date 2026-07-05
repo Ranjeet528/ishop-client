@@ -1,4 +1,4 @@
-import { getBrands } from '@/api/api-call';
+import { getBrands } from '@/api/server-api';
 import React from 'react';
 import { FaEdit } from "react-icons/fa";
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import { getColors } from "@/api/api-call";
+import { getColors } from "@/api/server-api";
 import React from "react";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";

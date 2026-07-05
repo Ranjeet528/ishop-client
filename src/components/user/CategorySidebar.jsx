@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getCategories } from "@/api/api-call";
+import { getCategories } from "@/api/server-api";
 import Link from "next/link";
 
 export default async function CategorySidebar() {

@@ -1,4 +1,4 @@
-import { getMe } from "@/api/server-api";
+import { getMe } from "@/api/auth-server";
 import AddAddressModal from "@/components/user/AddAddressModal";
 import React from "react";
 export const dynamic = "force-dynamic";

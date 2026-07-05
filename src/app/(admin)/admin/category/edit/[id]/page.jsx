@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react";
 import { notify } from "@/utils/helper";
 import { useParams, useRouter } from "next/navigation";
 import { FiImage } from "react-icons/fi";
-import { findCategoryById } from '@/api/api-call';
+import { findCategoryById } from '@/api/server-api';
 
 export default function categoryEdit() {
 

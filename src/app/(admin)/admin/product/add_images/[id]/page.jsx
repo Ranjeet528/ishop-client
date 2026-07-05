@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { notify } from "@/utils/helper";
 import { useParams, useRouter } from "next/navigation";
 import { FiImage } from "react-icons/fi";
-import { findProductById } from '@/api/api-call';
+import { findProductById } from '@/api/server-api';
 
 export default function page() {
 
