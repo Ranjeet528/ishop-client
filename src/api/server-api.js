@@ -2,8 +2,7 @@ import axios from "axios";
 import { cookies } from "next/headers";
 
 const serverClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  withCredentials: true
+  baseURL: `${process.env.BACKEND_URL}/api`,   // ← absolute URL zaroori hai
 });
 
 const getMe = async () => {
@@ -17,7 +16,7 @@ const getMe = async () => {
 
     const response = await serverClient.get("/user/get", {
       headers: {
-        Authorization: token,
+        Authorization: token,   // ← ye aapka original tha, sahi hai
       },
     });
 
@@ -29,11 +28,7 @@ const getMe = async () => {
 
   } catch (error) {
     console.log("GET ME ERROR:", error.response?.data || error.message);
-
-    return {
-      user: null,
-      success: false,
-    };
+    return { user: null, success: false };
   }
 };
 
